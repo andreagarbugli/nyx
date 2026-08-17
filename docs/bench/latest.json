@@ -1,0 +1,48 @@
+{
+  "benches": {
+    "cap_lookup_1level": {
+      "max": 115,
+      "n": 4000,
+      "p50": 42,
+      "p99": 72
+    },
+    "ctx_switch_same_as": {
+      "max": 24154,
+      "n": 20000,
+      "p50": 114,
+      "p99": 167
+    },
+    "ipc_roundtrip_same_core": {
+      "max": 16263,
+      "n": 20000,
+      "p50": 1252,
+      "p99": 1390
+    },
+    "notify_signal": {
+      "max": 70,
+      "n": 4000,
+      "p50": 37,
+      "p99": 53
+    },
+    "syscall_null": {
+      "max": 200,
+      "n": 200000,
+      "p50": 200,
+      "p99": 200
+    },
+    "variance_ctx_p50": {
+      "max": 123,
+      "n": 100,
+      "p50": 118,
+      "p99": 121
+    }
+  },
+  "env": {
+    "accel": "kvm",
+    "commit": "248cbb0",
+    "cpu": "11th Gen Intel(R) Core(TM) i5-1145G7E @ 2.60GHz",
+    "date": "2026-08-14T18:04:05Z",
+    "pinned_to": "5"
+  },
+  "wall_s": 2.741
+}

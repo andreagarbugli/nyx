@@ -1,0 +1,18 @@
+M0.0 — commit zero.
+
+  git init, .gitignore, and an empty commit. Kernel bugs are time-travel
+  bugs; bisect is the debugger and it needs a floor.
+
+Then M0.1's four ADRs, before any code in kernel/:
+
+  1. build system            — make or a script (CLAUDE.md leaves it open)
+  2. boot protocol           — hand-rolled Multiboot2 or Limine
+  3. IPC message shape       — decided against a workload, not a register
+                               budget (guide 08 §6a, retrospective §4.2)
+  4. capability representation — packed or not, with the byte count
+                               (guide 09, retrospective §4.6)
+
+Read before starting: guide 02, and guide 00.5 §6 for 3 and 4.
+
+Blocked on nothing. Open question for me to answer, not to defer:
+what workload is decision 3 being sized against?

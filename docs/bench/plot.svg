@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="620" font-family="monospace" font-size="12">
+<rect width="100%" height="100%" fill="#111"/>
+<text x="16" y="24" fill="#ddd">Nyx microbenchmarks (p50 cycles)</text>
+<text x="16" y="50" fill="#9cf">cap_lookup_1level</text>
+<text x="16" y="66" fill="#888">n=4  last=42  min=42  max=277</text>
+<polyline fill="none" stroke="#6c6" stroke-width="1.5" points="16.0,78.0 245.3,121.8 474.7,121.8 704.0,122.0"/>
+<circle cx="16.0" cy="78.0" r="2.5" fill="#8f8"/>
+<circle cx="245.3" cy="121.8" r="2.5" fill="#8f8"/>
+<circle cx="474.7" cy="121.8" r="2.5" fill="#8f8"/>
+<circle cx="704.0" cy="122.0" r="2.5" fill="#8f8"/>
+<text x="16" y="140" fill="#9cf">ctx_switch_same_as</text>
+<text x="16" y="156" fill="#888">n=4  last=114  min=114  max=684</text>
+<polyline fill="none" stroke="#6c6" stroke-width="1.5" points="16.0,168.0 245.3,211.8 474.7,211.8 704.0,212.0"/>
+<circle cx="16.0" cy="168.0" r="2.5" fill="#8f8"/>
+<circle cx="245.3" cy="211.8" r="2.5" fill="#8f8"/>
+<circle cx="474.7" cy="211.8" r="2.5" fill="#8f8"/>
+<circle cx="704.0" cy="212.0" r="2.5" fill="#8f8"/>
+<text x="16" y="230" fill="#9cf">ipc_roundtrip_same_core</text>
+<text x="16" y="246" fill="#888">n=4  last=1252  min=1250  max=3479</text>
+<polyline fill="none" stroke="#6c6" stroke-width="1.5" points="16.0,258.0 245.3,301.9 474.7,302.0 704.0,302.0"/>
+<circle cx="16.0" cy="258.0" r="2.5" fill="#8f8"/>
+<circle cx="245.3" cy="301.9" r="2.5" fill="#8f8"/>
+<circle cx="474.7" cy="302.0" r="2.5" fill="#8f8"/>
+<circle cx="704.0" cy="302.0" r="2.5" fill="#8f8"/>
+<text x="16" y="320" fill="#9cf">notify_signal</text>
+<text x="16" y="336" fill="#888">n=4  last=37  min=37  max=189</text>
+<polyline fill="none" stroke="#6c6" stroke-width="1.5" points="16.0,348.0 245.3,392.0 474.7,392.0 704.0,392.0"/>
+<circle cx="16.0" cy="348.0" r="2.5" fill="#8f8"/>
+<circle cx="245.3" cy="392.0" r="2.5" fill="#8f8"/>
+<circle cx="474.7" cy="392.0" r="2.5" fill="#8f8"/>
+<circle cx="704.0" cy="392.0" r="2.5" fill="#8f8"/>
+<text x="16" y="410" fill="#9cf">variance_ctx_p50</text>
+<text x="16" y="426" fill="#888">n=4  last=118  min=117  max=676</text>
+<polyline fill="none" stroke="#6c6" stroke-width="1.5" points="16.0,438.0 245.3,481.9 474.7,482.0 704.0,481.9"/>
+<circle cx="16.0" cy="438.0" r="2.5" fill="#8f8"/>
+<circle cx="245.3" cy="481.9" r="2.5" fill="#8f8"/>
+<circle cx="474.7" cy="482.0" r="2.5" fill="#8f8"/>
+<circle cx="704.0" cy="481.9" r="2.5" fill="#8f8"/>
+<text x="16" y="500" fill="#9cf">syscall_null</text>
+<text x="16" y="516" fill="#888">n=3  last=200  min=198  max=256</text>
+<polyline fill="none" stroke="#6c6" stroke-width="1.5" points="16.0,528.0 360.0,572.0 704.0,570.5"/>
+<circle cx="16.0" cy="528.0" r="2.5" fill="#8f8"/>
+<circle cx="360.0" cy="572.0" r="2.5" fill="#8f8"/>
+<circle cx="704.0" cy="570.5" r="2.5" fill="#8f8"/>
+</svg>
