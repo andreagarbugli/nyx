@@ -37,16 +37,30 @@ work. Nothing in Phase 0 needs the kernel to do anything interesting.
 | # | Milestone | Done when |
 |---|---|---|
 | M0.0 | `git init`, commit zero, `-Werror` freestanding toolchain, linker script, build | `make` produces `nyx.elf`; `grub-file --is-x86-multiboot2 nyx.elf` passes |
-| M0.1 | Decisions written down: build system, boot protocol, IPC message shape, capability representation | four ADRs in `docs/decisions/`, numbering restarted for V2 |
+| M0.1 | Doc reset: `docs/` describes V2's *actual* state, not V1's | no claim in `docs/invariants.md` without a test that exists here |
 | M0.2 | Test harness + bench runner wired to `make`, headless, exit code is the result | `make test` passes with one trivial ktest; `make bench` emits p50/p99/max JSON |
-| M0.3 | Doc reset: `docs/` describes V2's *actual* state, not V1's | no claim in `docs/invariants.md` without a test that exists here |
 
 Status: all `todo`.
 
-> **M0.1 is not paperwork.** Retrospective §4.2 and §4.6: the IPC message
-> shape and the capability representation are the two decisions that every
-> later file inherits. V1 deferred both and paid for both. They are due
-> before the first line of `kernel/`.
+### ADRs are written when the decision is made
+
+Not before. An ADR written in advance of the evidence is fiction, and
+00.5 §6 does not ask for one — it says these two decisions are *expensive
+to change*, which is a different claim from *decide them first*.
+
+What it does ask for is that the decision be **noticed when it happens**,
+because the real failure mode is not a missing document. It is code that
+encodes an answer before anyone realised a question was being asked.
+
+| Decision | ADR due at | Why there, and not later |
+|---|---|---|
+| Build system | after M0.0 | cheap to reverse; discovered by doing |
+| Boot protocol | after M1.0 | same |
+| **Capability representation** | **M2.1** | Retype creates objects. Whatever `struct cap` is typed that day *is* the decision. |
+| **IPC message shape** | **M3.3** | Needs a workload to size against, and that is the first milestone that has one. |
+
+The two in bold are the ones where "we'll see what makes sense" has a
+deadline that arrives earlier than it looks.
 
 > **M0.2 before M1.** V1 built the harness at chapter 18 and spent four
 > milestones not knowing its own numbers were wrong (00.5 §5 — the core-0

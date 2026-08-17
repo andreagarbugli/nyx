@@ -1,18 +1,21 @@
-M0.0 — commit zero.
+M0.0 — commit zero and a build.
 
-  git init, .gitignore, and an empty commit. Kernel bugs are time-travel
-  bugs; bisect is the debugger and it needs a floor.
+  git init, .gitignore, empty commit. Kernel bugs are time-travel bugs;
+  bisect is the debugger and it needs a floor.
 
-Then M0.1's four ADRs, before any code in kernel/:
+  Then: linker script, CFLAGS, a nyx.elf that links but does nothing.
 
-  1. build system            — make or a script (CLAUDE.md leaves it open)
-  2. boot protocol           — hand-rolled Multiboot2 or Limine
-  3. IPC message shape       — decided against a workload, not a register
-                               budget (guide 08 §6a, retrospective §4.2)
-  4. capability representation — packed or not, with the byte count
-                               (guide 09, retrospective §4.6)
+  Done when: `make` produces nyx.elf and
+             `grub-file --is-x86-multiboot2 nyx.elf` passes.
 
-Read before starting: guide 02, and guide 00.5 §6 for 3 and 4.
+Read first: guide 02 (§2 for the flag table, §3 for the linker script).
 
-Blocked on nothing. Open question for me to answer, not to defer:
-what workload is decision 3 being sized against?
+ADRs are written when the decision is actually made, not before.
+  - build system, boot protocol: write the ADR after M0.0/M1.0, recording
+    what you hit. Cheap to reverse; discovery is the right method.
+  - capability representation: due at M2.1. Retype creates objects, so
+    M2.1 decides this whether or not it is written down.
+  - IPC message shape: due at M3.3, sized against a real workload.
+
+Toolchain present: nasm, gcc, ld, grub-file, qemu-system-x86_64, make.
+/dev/kvm exists — confirm group membership before trusting `make test`.
